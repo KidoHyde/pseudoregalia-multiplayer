@@ -2,7 +2,6 @@
 
 #include <string>
 
-#include "Unreal/TArray.hpp"
 
 #include "ST_PlayerInfo.hpp"
 
