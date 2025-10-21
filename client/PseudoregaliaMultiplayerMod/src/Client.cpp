@@ -12,6 +12,7 @@
 #define WSWRAP_SEND_EXCEPTIONS
 #define ASIO_STANDALONE
 #define BOOST_ALL_NO_LIB
+#define _WEBSOCKETPP_CPP11_STRICT_
 #include "wswrap.hpp"
 #include "nlohmann/json.hpp"
 

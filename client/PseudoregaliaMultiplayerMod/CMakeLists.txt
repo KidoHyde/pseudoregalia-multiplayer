@@ -11,3 +11,5 @@ target_include_directories(${TARGET} PRIVATE "deps/websocketpp")
 target_include_directories(${TARGET} PRIVATE "deps/json/include")
 target_include_directories(${TARGET} PRIVATE "deps/tomlplusplus/include")
 target_link_libraries(${TARGET} PUBLIC UE4SS)
+
+target_compile_definitions(${TARGET} PRIVATE _WIN32_WINNT=0x0600)
