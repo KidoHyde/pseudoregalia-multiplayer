@@ -5,6 +5,10 @@
 #include "Unreal/UClass.hpp"
 #include "Unreal/UFunction.hpp"
 #include "Unreal/World.hpp"
+#include <Unreal/Property/FArrayProperty.hpp>
+#pragma warning(default : 4005)
+
+#include <UnrealDef.hpp>
 
 #include "Client.hpp"
 #include "Logger.hpp"
@@ -18,7 +22,7 @@ public:
     PseudoregaliaMultiplayerMod() : CppUserModBase()
     {
         ModName = STR("PseudoregaliaMultiplayerMod");
-        ModVersion = STR("1.0");
+        ModVersion = STR("1.1");
         ModDescription = STR("Multiplayer mod for Pseudoregalia");
         ModAuthors = STR("highrow623");
         // Do not change this unless you want to target a UE4SS version
@@ -68,12 +72,15 @@ public:
 
         struct UpdateGhostsParams
         {
-            RC::Unreal::TArray<FST_PlayerInfo> ghost_info;
+            RC::Unreal::FScriptArray ghost_info_raw;
             RC::Unreal::TArray<uint8_t> to_remove;
         };
         auto params = std::make_unique<UpdateGhostsParams>();
-        Client::GetGhostInfo(millis, params->ghost_info, params->to_remove);
-        if (params->ghost_info.Num() == 0 && params->to_remove.Num() == 0)
+
+        //auto& ghost_info = *reinterpret_cast<FST_PlayerInfo>(&params->ghost_info_raw);
+
+        Client::GetGhostInfo(millis, params->ghost_info_raw, params->to_remove);
+        if (params->ghost_info_raw.Num() == 0 && params->to_remove.Num() == 0)
         {
             return;
         }
