@@ -12,8 +12,9 @@ struct FST_PlayerInfo
     double rotation_y;                // 0x0020 (size: 0x8)
     double rotation_z;                // 0x0028 (size: 0x8)
     RC::Unreal::FString name;         // 0x0030 (size: 0x10)
-    uint8_t id;                       // 0x0040 (size: 0x1)
-    uint8_t red;                      // 0x0041 (size: 0x1)
-    uint8_t green;                    // 0x0042 (size: 0x1)
-    uint8_t blue;                     // 0x0043 (size: 0x1)
+    RC::Unreal::FString skin;         // 0x0040 (size: 0x10)
+    uint8_t id;                       // 0x0050 (size: 0x1)
+    uint8_t red;                      // 0x0051 (size: 0x1)
+    uint8_t green;                    // 0x0052 (size: 0x1)
+    uint8_t blue;                     // 0x0053 (size: 0x1)
 }; // Size: 0x44

@@ -2,8 +2,7 @@
 
 #include <string>
 
-#include "Unreal/FScriptArray.hpp"
-#include "Unreal/TArray.hpp"
+
 
 #include "ST_PlayerInfo.hpp"
 

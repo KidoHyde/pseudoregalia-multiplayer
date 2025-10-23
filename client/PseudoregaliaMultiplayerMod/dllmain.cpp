@@ -1,7 +1,6 @@
 #include <Mod/CppUserModBase.hpp>
 
 #include "Unreal/AActor.hpp"
-#include "Unreal/FScriptArray.hpp"
 #include "Unreal/Hooks.hpp"
 #include "Unreal/UClass.hpp"
 #include "Unreal/UFunction.hpp"
